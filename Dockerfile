@@ -1,5 +1,8 @@
 FROM node:18-alpine
 
+# samlp dependency is github:mcguinness/node-samlp - npm needs git to clone it.
+RUN apk add --no-cache git
+
 ADD ./package.json package.json
 RUN npm install
 
